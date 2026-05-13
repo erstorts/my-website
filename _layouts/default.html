@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ site.og_image | absolute_url }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{{ site.og_image | absolute_url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  {% feed_meta %}
+</head>
+<body class="{% if page.layout %}layout-{{ page.layout }}{% endif %}">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="{{ '/' | relative_url }}" class="site-name">Emmett Storts</a>
+      <nav class="site-nav" aria-label="Primary">
+        {% if page.url == '/' %}
+          <a href="#offer">Offer</a>
+          <a href="#about">About</a>
+          <a href="#fit">Fit</a>
+        {% else %}
+          <a href="{{ '/#offer' | relative_url }}">Offer</a>
+          <a href="{{ '/#about' | relative_url }}">About</a>
+          <a href="{{ '/#fit' | relative_url }}">Fit</a>
+        {% endif %}
+        <a href="{{ '/blog/' | relative_url }}">Writing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>
