@@ -1,0 +1,43 @@
+title: Emmett Storts
+tagline: Freelance data science for Series A SaaS
+description: I help Series A software founders get one source of truth they can act on — and defend in a board meeting.
+author: Emmett Storts
+email: emmett.storts@protonmail.com
+url: ""
+baseurl: ""
+
+calendar_url: https://calendar.app.google/hMUPdTZwPmMhddmT8
+linkedin_url: https://www.linkedin.com/in/emmett-storts/
+github_url: https://github.com/erstorts
+
+og_image: /assets/img/og-card.png
+headshot: /assets/img/headshot.jpg
+
+permalink: /blog/:slug/
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - PRD.md
+  - BLOG.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .claude
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false

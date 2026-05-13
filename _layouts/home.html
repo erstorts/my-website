@@ -1,0 +1,101 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>Stop running your company through five tools that tell five different stories.</h1>
+      <p class="hero-sub">I help Series A software founders get one source of truth they can act on — and defend in a board meeting.</p>
+      <a href="{{ site.calendar_url }}" target="_blank" rel="noopener" class="btn btn-primary" data-cta="hero">Book a 20-minute intro call</a>
+    </div>
+    <div class="hero-image">
+      <img src="{{ site.headshot | relative_url }}" alt="Headshot of Emmett Storts" width="280" height="280">
+    </div>
+  </div>
+</section>
+
+<section id="problem" class="section section-problem">
+  <div class="container">
+    <h2>The problem</h2>
+    <div class="problem-grid">
+      <div class="problem-block">
+        <h3>Data fragmentation</h3>
+        <p>Truth is scattered across Stripe, HubSpot, Segment, GA, and a Google Sheet someone updates on Fridays. None of the tools talk to each other. Reconciling them is a person's job nobody owns.</p>
+      </div>
+      <div class="problem-block">
+        <h3>Signal distrust</h3>
+        <p>The numbers exist, but they conflict with what customers and the team are saying. When the dashboard disagrees with the gut, the dashboard loses — and then nobody trusts the dashboard.</p>
+      </div>
+      <div class="problem-block">
+        <h3>Decision blindness</h3>
+        <p>Real calls get made on inputs nobody believes. Marketing spend keeps running on a channel that isn't converting. A feature ships without a real A/B test. The aha-moment that drives retention stays a guess. The cost shows up two quarters later, in churn and burned cash.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="offer" class="section section-offer">
+  <div class="container">
+    <h2>What I offer</h2>
+    <div class="offer-grid">
+      <article class="offer-card">
+        <h3>3-month build</h3>
+        <p>Data organization and infrastructure. One trustworthy source of truth, end to end. You walk out with numbers you can defend.</p>
+      </article>
+      <article class="offer-card">
+        <h3>Ongoing retainer</h3>
+        <p>Fractional data leadership and maintenance. Senior judgment when you need it, without the cost of a full-time hire.</p>
+      </article>
+      <article class="offer-card">
+        <h3>On-demand projects</h3>
+        <p>Single analytics or ML projects with a defined deliverable. Attribution audit, churn model, funnel teardown — scoped and shipped.</p>
+      </article>
+    </div>
+    <div class="offer-cta">
+      <a href="{{ site.calendar_url }}" target="_blank" rel="noopener" class="btn btn-primary" data-cta="offer">Book a 20-minute intro call</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section section-about">
+  <div class="container">
+    <h2>About me</h2>
+    <p>I'm a freelance data scientist working with software companies on data organization, analytics, and machine learning. I take on the work a Series A team needs but can't justify hiring full-time for yet.</p>
+    <p>Before this I led data work at The Daily Wire, Product Hunt, and WEC Energy Group. The stack changes by company — dbt pipelines, ML frameworks, A/B testing, network analysis, internal Streamlit tools — but the job is the same: turn a mess of inputs into a few numbers people can act on.</p>
+    <p>My background is in applied economics, which means causal thinking and problem framing come first. The question matters more than the model. Most "we need a better dashboard" requests aren't really about the dashboard.</p>
+    <ul class="about-links">
+      <li><a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="{{ site.github_url }}" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="mailto:{{ site.email }}">Email</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="fit" class="section section-fit">
+  <div class="container">
+    <h2>Who I work best with</h2>
+    <div class="fit-grid">
+      <div class="fit-block fit-yes">
+        <h3>This works best when you're</h3>
+        <ul>
+          <li>A B2B SaaS company, 25–75 people</li>
+          <li>Post-Series A, with product-market fit validated and scaling</li>
+          <li>Running paid acquisition on Meta, Google, or both</li>
+          <li>Event tracking is in place (Segment, Mixpanel, GA) but underused</li>
+          <li>Without a dedicated data hire</li>
+        </ul>
+      </div>
+      <div class="fit-block fit-no">
+        <h3>This isn't a fit if you</h3>
+        <ul>
+          <li>Need a one-day dashboard fix</li>
+          <li>Want someone to manage an existing data team</li>
+          <li>Are pre-PMF and still figuring out what to measure</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta.html line="Twenty minutes. Tell me what's broken. I'll tell you whether I can help." location="home-bottom" %}

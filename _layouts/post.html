@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<article class="post">
+  <div class="container container-prose">
+    <p class="post-back-top"><a href="{{ '/blog/' | relative_url }}">← All posts</a></p>
+    <header class="post-header">
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+    </header>
+
+    <div class="post-body">
+      {{ content }}
+    </div>
+
+    <p class="post-back-bottom"><a href="{{ '/blog/' | relative_url }}">← All posts</a></p>
+  </div>
+</article>
+
+{% include cta.html line="Twenty minutes. Tell me what's broken. I'll tell you whether I can help." location="post-bottom" %}

@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-line">
+      <span>Emmett Storts</span>
+      <span class="sep">·</span>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <span class="sep">·</span>
+      <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">·</span>
+      <a href="{{ site.github_url }}" target="_blank" rel="noopener">GitHub</a>
+      <span class="sep">·</span>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </p>
+    <p class="footer-copy">© Emmett Storts, {{ 'now' | date: "%Y" }}</p>
+  </div>
+</footer>
