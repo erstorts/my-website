@@ -1,0 +1,18 @@
+{% comment %}
+  Project card. Param: project -> a _projects collection item.
+  Uses front matter: title, status, summary, angle (optional), stack (list), url.
+{% endcomment %}
+{% assign p = include.project %}
+<article class="project-card">
+  <div class="project-card-head">
+    <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    {% if p.status %}<span class="project-status project-status-{{ p.status | slugify }}">{{ p.status }}</span>{% endif %}
+  </div>
+  <p class="project-card-summary">{{ p.summary }}</p>
+  {% if p.angle %}<p class="project-card-angle">{{ p.angle }}</p>{% endif %}
+  {% if p.stack %}
+    <ul class="stack-tags">
+      {% for item in p.stack %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  {% endif %}
+</article>

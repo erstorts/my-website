@@ -1,0 +1,14 @@
+{% comment %}
+  Resume download control. Params:
+    style   -> button class modifier: "primary" | "secondary" | "link" (default "secondary")
+    label   -> override link text
+    updated -> "true" to append the "updated <month year>" note
+{% endcomment %}
+{% assign _style = include.style | default: "secondary" %}
+{% assign _label = include.label | default: "Download resume (PDF)" %}
+{% if _style == "link" %}
+  <a href="{{ site.resume_url | relative_url }}" class="resume-link" download data-cta="resume">{{ _label }}</a>
+{% else %}
+  <a href="{{ site.resume_url | relative_url }}" class="btn btn-{{ _style }}" download data-cta="resume">{{ _label }}</a>
+{% endif %}
+{% if include.updated and site.resume_updated %}<span class="resume-updated">Updated {{ site.resume_updated }}</span>{% endif %}

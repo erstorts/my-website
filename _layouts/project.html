@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<article class="project">
+  <div class="container container-prose">
+    <p class="post-back-top"><a href="{{ '/projects/' | relative_url }}">← All projects</a></p>
+
+    <header class="project-header">
+      <h1>{{ page.title }}</h1>
+      <p class="project-header-meta">
+        {% if page.status %}<span class="project-status project-status-{{ page.status | slugify }}">{{ page.status }}</span>{% endif %}
+        {% if page.role %}<span class="project-role">{{ page.role }}</span>{% endif %}
+        {% if page.last_updated %}<span class="project-updated">Updated {{ page.last_updated }}</span>{% endif %}
+      </p>
+      {% if page.summary %}<p class="project-summary">{{ page.summary }}</p>{% endif %}
+    </header>
+
+    {% if page.stack or page.links %}
+    <div class="project-facts">
+      {% if page.stack %}
+      <div class="project-fact">
+        <h4>Stack</h4>
+        <ul class="stack-tags">
+          {% for item in page.stack %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% if page.links %}
+      <div class="project-fact">
+        <h4>Links</h4>
+        <ul class="project-link-list">
+          {% if page.links.live %}<li><a href="{{ page.links.live }}" target="_blank" rel="noopener">Live</a></li>{% endif %}
+          {% if page.links.repo %}<li><a href="{{ page.links.repo }}" target="_blank" rel="noopener">Repo</a></li>{% endif %}
+          {% if page.links.writeup %}<li><a href="{{ page.links.writeup | relative_url }}">Writeup</a></li>{% endif %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="post-body project-body">
+      {{ content }}
+    </div>
+
+    {% assign related = site.posts | where: "project", page.slug %}
+    {% if related.size > 0 %}
+    <section class="project-updates">
+      <h2>Latest updates</h2>
+      <ul class="post-list">
+        {% for post in related %}{% include post-card.html post=post %}{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    <p class="post-back-bottom"><a href="{{ '/projects/' | relative_url }}">← All projects</a></p>
+  </div>
+</article>
+
+{% include cta.html line="If any of this is close to a problem you're hiring for, let's talk." location="project-bottom" %}

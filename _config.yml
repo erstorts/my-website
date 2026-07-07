@@ -1,19 +1,30 @@
 title: Emmett Storts
-tagline: Freelance data science for Series A SaaS
-description: I help Series A software founders get one source of truth they can act on — and defend in a board meeting.
+tagline: Full-stack data scientist
+description: Full-stack data scientist in Denver specializing in experimentation and causal inference. Eight years owning data functions end to end, from ETL pipelines to production ML. Currently building in public.
 author: Emmett Storts
-email: emmett@emmettstorts.com
+email: emmett.storts@protonmail.com
 url: "https://emmettstorts.com"
 baseurl: ""  # empty string since it's at the root
 
-calendar_url: https://calendar.app.google/JdSgtyPtZ87uPBNx7
+calendar_url: https://calendar.proton.me/bookings#m4lAEuGuIdGxJsiI4WlZYEDlgOZtu4QfnctbcAcRwVU=
 linkedin_url: https://www.linkedin.com/in/emmett-storts/
 github_url: https://github.com/erstorts
 
-og_image: /assets/img/og-card.png
 headshot: /assets/img/headshot.jpg
 
+# Resume: drop the PDF at the path below, then set the "updated" label so it reads as current.
+resume_url: /assets/resume/Emmett_Storts_Resume.pdf
+resume_updated: "July 2026"
+
+# GA4: paste your Measurement ID (G-XXXXXXXXXX) to switch analytics on. Blank = disabled.
+google_analytics: "G-836BYGMVRC"
+
 permalink: /blog/:slug/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 plugins:
   - jekyll-sitemap
@@ -26,10 +37,16 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
 
 exclude:
   - PRD.md
   - BLOG.md
+  - emmettstorts_site_pivot_PRD.md
   - README.md
   - Gemfile
   - Gemfile.lock

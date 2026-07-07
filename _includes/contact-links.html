@@ -1,0 +1,7 @@
+{% comment %} Reusable contact links row. {% endcomment %}
+<ul class="contact-links">
+  <li><a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a></li>
+  <li><a href="{{ site.github_url }}" target="_blank" rel="noopener">GitHub</a></li>
+  <li><a href="mailto:{{ site.email }}">Email</a></li>
+  <li>{% include resume-button.html style="link" %}</li>
+</ul>
